@@ -39,8 +39,12 @@ class ClosestSums {
 
             for (int i = 0; i < nums.length; i++) {
                 for (int j = 0; j < nums.length; j++) {
-                    if (Math.abs(query - (nums[i] + nums[j])) < Math.abs(query - closestSum)) {
-                        closestSum = nums[i] + nums[j];
+                    if (i == j) {
+                        continue;
+                    } else {
+                        if (Math.abs(query - (nums[i] + nums[j])) < Math.abs(query - closestSum)) {
+                            closestSum = nums[i] + nums[j];
+                        }
                     }
                 }
             }
